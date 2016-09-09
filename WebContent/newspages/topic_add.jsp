@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>添加新闻--管理后台</title>
+<title>添加主题--管理后台</title>
 <link href="../CSS/admin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -31,46 +31,17 @@
     </ul>
   </div>
   <div id="opt_area">
-    <h1 id="opt_type"> 添加新闻： </h1>
+    <h1 id="opt_type"> 添加主题： </h1>
     <form action="" method="post">
-      <p>
-        <label>主题 &nbsp; </label>
-        <select name="ntid" style="width: 200px">
-          <option value="">  选择</option>
-          <%
-           DBHelper db = new DBHelper();
-           String sql = "select * from topic";
-           List<Map<String , Object>> list =new ArrayList<Map<String ,Object>>();
-           list =  db.findMultiObject(sql, null);
-            for(int i = 0; i<list.size();i++){%>
-        	 <option value='<%=list.get(i).get("TID") %> '><%=list.get(i).get("TNAME") %> </option> 
-        <% }
-        %>
-        </select>
-      </p>
-      <p>
-        <label> 标题 </label>
-        <input name="ntitle" type="text" class="opt_input" />
-      </p>
-      <p>
-        <label> 作者 </label>
-        <input name="nauthor" type="text" class="opt_input" />
-      </p>
-      <p>
-        <label> 摘要 </label>
-        <textarea name="nsummary" cols="40" rows="3"></textarea>
-      </p>
-      <p>
-        <label> 内容 </label>
-        <textarea name="ncontent" cols="70" rows="9"></textarea>
-      </p>
-      <p>
-        <label> 上传图片 </label>
-        <input name="file" type="file" class="opt_input" />
-      </p>
-      <input type="submit" value="提交" class="opt_sub" />
-      <input type="reset" value="重置" class="opt_sub" />
-    </form>
+	<p>
+		<label>
+			主题名称
+		</label>
+		<input name="tname" type="text" class="opt_input" />
+	</p>
+	<input type="submit" value="提交" class="opt_sub" />
+	<input type="reset" value="重置" class="opt_sub" />
+   </form>
   </div>
 </div>
 <div id="site_link"> <a href="#">关于我们</a><span>|</span> <a href="#">Aboue Us</a><span>|</span> <a href="#">联系我们</a><span>|</span> <a href="#">广告服务</a><span>|</span> <a href="#">供稿服务</a><span>|</span> <a href="#">法律声明</a><span>|</span> <a href="#">招聘信息</a><span>|</span> <a href="#">网站地图</a><span>|</span> <a href="#">留言反馈</a> </div>

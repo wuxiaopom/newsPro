@@ -35,14 +35,15 @@
   <div class="sidebar">
     <h1> <img src="Images/title_1.gif" alt="国内新闻" /> </h1>
     <div class="side_list">
+       <ul>	
     	<% 
     	  List<Map<String , Object>> clist = nd.findNewsByType("10001");
     	   if(clist != null && clist.size()>0 ){
-    		   for(int i = 0;i < 5;i++){%>
-    			  <li><a href=''><%=clist.get(i).get("NCONTENT") %>  </a></li> 
+    		   for(int i = 0;i <= 5;i++){%>
+    			  <li>&nbsp;&nbsp;&nbsp;<a href=''><%=clist.get(i).get("NTITLE") %>  </a></li>
     		 <%  }
     	 }%>
-    	
+       </ul>
     </div>
     <h1> <img src="Images/title_2.gif" alt="国际新闻" /> </h1>
     <div class="side_list">
